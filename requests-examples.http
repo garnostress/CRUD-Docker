@@ -1,0 +1,163 @@
+# примеры API-запросов
+
+@baseUrl = http://127.0.0.1:8000/api/v1
+
+# создание продукта
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "Помидор",
+  "description": "Лучшие помидоры на рынке"
+}
+
+###
+# создание продукта
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "Картофель",
+  "description": "Лучший картофель на рынке"
+}
+
+###
+
+# создание продукта
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "Лук",
+  "description": "Лучший лук на рынке"
+}
+
+###
+
+# создание продукта
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "тухлые котлетки",
+  "description": "Лучшие тухлые котлетки на рынке"
+}
+
+###
+
+# получение продуктов
+GET {{baseUrl}}/products/
+Content-Type: application/json
+
+###
+
+# обновление продукта
+PATCH {{baseUrl}}/products/1/
+Content-Type: application/json
+
+{
+  "description": "Самые сочные и ароматные помидорки"
+}
+
+###
+
+# удаление продукта
+DELETE {{baseUrl}}/products/4/
+Content-Type: application/json
+
+###
+
+# поиск продуктов по названию и описанию
+GET {{baseUrl}}/products/?search=помидор
+Content-Type: application/json
+
+###
+
+# создание склада
+POST {{baseUrl}}/stocks/
+Content-Type: application/json
+
+{
+  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
+  "positions": [
+    {
+      "product": 2,
+      "quantity": 250,
+      "price": 120.50
+    },
+    {
+      "product": 3,
+      "quantity": 100,
+      "price": 180
+    }
+  ]
+}
+
+###
+
+# создание склада
+POST {{baseUrl}}/stocks/
+Content-Type: application/json
+
+{
+  "address": "екатеринбург",
+  "positions": [
+    {
+      "product": 1,
+      "quantity": 1000,
+      "price": 100
+    },
+    {
+      "product": 2,
+      "quantity": 30,
+      "price": 3500
+    }
+  ]
+}
+
+###
+
+# обновляем записи на складе
+PATCH {{baseUrl}}/stocks/1/
+Content-Type: application/json
+
+{
+  "positions": [
+    {
+      "product": 2,
+      "quantity": 100,
+      "price": 130.80
+    },
+    {
+      "product": 3,
+      "quantity": 243,
+      "price": 150
+    }
+  ]
+}
+
+###
+
+# поиск складов, где есть определенный продукт
+GET {{baseUrl}}/stocks/?products=1
+Content-Type: application/json
+
+###
+
+# все склады
+GET {{baseUrl}}/stocks/
+Content-Type: application/json
+
+###
+
+
+# конкретный склад
+GET {{baseUrl}}/stocks/1
+Content-Type: application/json
+
+###
+
+
+GET http://127.0.0.1:8888/hello/
+Content-Type: application/json
+
